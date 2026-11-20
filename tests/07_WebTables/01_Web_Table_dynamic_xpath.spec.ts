@@ -31,7 +31,7 @@ test("Normal_Web_Table" , async ({page})=>{
     const rows = await page.locator("//table[@id='customers']/tbody/tr").count();
     const cols = await page.locator("//table[@id='customers']/tbody/tr[1]/th").count();
 
-    for (let i = 2; i <= rows; i++) {      
+    for (let i = 2; i <= rows; i++) {
         for(let j = 1; j <= cols; j++){
             
             const dynamicXpath =   `${firstPart}${i}${secondPart}${j}${thirdPart}`;

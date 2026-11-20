@@ -11,9 +11,12 @@ test("Dynamic_Web_Tables" , async ({page})=>{
     // now as we have total rows we can find all the elements in it using nth() method like below 
 
     for (let i = 0; i < rowsCount; i++) {
+       
         // now here we will iterate through each child element of that particular row
         const rowData:string[] = await rows.nth(i).locator('td').allInnerTexts();
         console.log(`Row ${i+1}:`, rowData);
+    
     }
+
     
 });
