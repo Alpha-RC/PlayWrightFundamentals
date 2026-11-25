@@ -5,8 +5,9 @@ test("JS Alerts" , async ({page})=>{
     await page.goto("https://the-internet.herokuapp.com/javascript_alerts");
 
     // note in case of JS dialog box of type 'alert' , 'confirm', 'prompt' 
-    // then we need to register a dialog box handler BEFORE triggering these type of dialog boxes
+    // then we need to register a dialog box handler BEFORE triggering these type of dialog boxess
 
+//========================================================================================================================================
     // 1. JS Alert:
 
     // below once() method will capture the alert box and send accept response to the alert box so it can be removed/closed
@@ -18,6 +19,8 @@ test("JS Alerts" , async ({page})=>{
     // });
 
     // await page.getByRole('button' , {name: "Click for JS Alert" , exact: true}).click();  //--> This will trigger the JS Alert
+
+//========================================================================================================================================
 
     // 2. JS Confirm alert:
 
@@ -32,6 +35,8 @@ test("JS Alerts" , async ({page})=>{
 
     // await page.getByRole('button', {name: 'Click for JS Confirm', exact: true}).click();    //--> this trigger the confirm type of alert
 
+//========================================================================================================================================
+
     // 3. JS Prompt alert:
 
     const inputText = "Rohit";
@@ -42,4 +47,7 @@ test("JS Alerts" , async ({page})=>{
     });
 
     await page.getByRole('button', {name: 'Click for JS Prompt' , exact: true}).click();
+
+//========================================================================================================================================
+
 });
