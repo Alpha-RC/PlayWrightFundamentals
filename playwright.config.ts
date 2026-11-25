@@ -54,18 +54,24 @@ export default defineConfig({
 
     headless: false,   // Runs tests in headed mode
 
-    // viewport: { width:1920, height:1080},
-    
     // screenshot:'on',
     // video:'on',
+
+
+    // launchOptions:{
+    //   args: ["--start-maximized"],
+    // },
+    // viewport: { width:1920, height:1080},
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
+      use: { 
+        ...devices['Desktop Chrome'],
         permissions: [],
+        // viewport: {width: 1920, height: 1080},
        },
     },
 
