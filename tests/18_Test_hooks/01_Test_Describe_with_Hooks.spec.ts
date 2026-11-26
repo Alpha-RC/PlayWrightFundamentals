@@ -11,7 +11,6 @@ test.describe("Flipkart Search via SVG" , ()=>{
         await page.goto(URL); 
     });
 
-
     //                tags: -----> we can run particular tests with the help of tags, like if we just want to run only smoke test 
     //          _______|_______    then we can run only those cases with the help of @smoke tag which need to be mention in the title of test
     //         |               |
