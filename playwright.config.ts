@@ -34,13 +34,12 @@ export default defineConfig({
 
   // line + allure report configuration:
   reporter: [ ["line"], ["allure-playwright"] ],
-
   // 1. 'line' -> It displays live test execution progress in the terminal.
   // 2. Need to run below 2 commands to install allure 
   //    "npm install -g allure-commandline" => to run CLI command line which will generates and serves the HTML report.
   //    "npm install --save-dev @playwright/test allure-playwright" => to generates test result files.
-
-  
+  //    "npx allure serve allure-results" --> this command will generate the report in a temporary folder and host it on browser
+ 
 
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
