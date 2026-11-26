@@ -11,10 +11,13 @@ test.describe("Find cheapest macmini" , ()=>{
 
     test("find cheapest price" , async ({page})=>{
         
+        // fill macmini in search box:
         await page.locator("//input[@name = 'q']").fill("macmini");
         
         // finding the SVG elements:
         const svgElement: Locator = page.locator("svg");
+
+        // click on first svg element:
         await svgElement.first().click();
 
         await page.waitForTimeout(5000);
