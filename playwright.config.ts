@@ -19,27 +19,28 @@ export default defineConfig({
   testMatch: '**/*.spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
-  
+
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  
+
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  
+
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  
+  // or we can add ...(process.env.CI ? { workers: 2 } : {}), and keep "exactOptionalPropertyTypes": true in tsconfig.json file
+
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html', //--> this one is default html report
 
   // line + allure report configuration:
-  reporter: [ ["line"], ["allure-playwright"] ],
+  reporter: [["line"], ["allure-playwright"]],
   // 1. 'line' -> It displays live test execution progress in the terminal.
   // 2. Need to run below 2 commands to install allure 
   //    "npm install -g allure-commandline" => to run CLI command line which will generates and serves the HTML report.
   //    "npm install --save-dev @playwright/test allure-playwright" => to generates test result files.
   //    "npx allure serve allure-results" --> this command will generate the report in a temporary folder and host it on browser
- 
+
 
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -67,11 +68,11 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
         permissions: [],
         // viewport: {width: 1920, height: 1080},
-       },
+      },
     },
 
     // {
